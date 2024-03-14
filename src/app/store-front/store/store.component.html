@@ -1,10 +1,9 @@
 <div>
-  <button (click)="changeFilter()">Filter by:</button>
-  <p>{{ filter | uppercase }}</p>
+  <button (click)="changeFilter()">{{ filter || "none" }}</button>
 </div>
 <div>
-  <button (click)="toggleAscending()">Price</button>
-  <p></p>
+  <button (click)="toggleAscendingPrice()">Price</button>
+  <button (click)="toggleAscendingName()">Name</button>
 </div>
 <ul class="item-list store--item-list">
   <app-store-item
