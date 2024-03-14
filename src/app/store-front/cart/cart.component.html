@@ -1,9 +1,12 @@
-<div class="cart--item-list-container">
-  <ul class="item-list cart--item-list">
-    <app-cart-item
-      *ngFor="let item of unique(cart)"
-      [item]="item"
-      [amount]="countAmount(item)"
-    ></app-cart-item>
-  </ul>
-</div>
+<main id="cart">
+  <h2>Your Cart</h2>
+  <div class="cart--item-list-container">
+    <ul class="item-list cart--item-list">
+      <app-cart-item
+        *ngFor="let item of unique(cart)"
+        [item]="item"
+        [amount]="countAmount(item)"
+      ></app-cart-item>
+    </ul>
+  </div>
+</main>

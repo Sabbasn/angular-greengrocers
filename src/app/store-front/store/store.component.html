@@ -1,14 +1,17 @@
-<div>
-  <button (click)="changeFilter()">{{ filter || "none" }}</button>
-  <button (click)="toggleAscendingPrice()">Price</button>
-  <button (click)="toggleAscendingName()">Name</button>
-</div>
-<ul class="item-list store--item-list">
-  <app-store-item
-    *ngFor="let grocery of groceries"
-    [item]="grocery"
-    (add)="addToCart($event)"
-  ></app-store-item>
-  <h1 *ngIf="error" style="color: red">{{ error }}</h1>
-  <h1 *ngIf="loading">Loading...</h1>
-</ul>
+<header id="store">
+  <h1>Greengrocers</h1>
+  <div>
+    <button (click)="changeFilter()">{{ filter || "none" }}</button>
+    <button (click)="toggleAscendingPrice()">Price</button>
+    <button (click)="toggleAscendingName()">Name</button>
+  </div>
+  <ul class="item-list store--item-list">
+    <app-store-item
+      *ngFor="let grocery of groceries"
+      [item]="grocery"
+      (add)="addToCart($event)"
+    ></app-store-item>
+    <h1 *ngIf="error" style="color: red">{{ error }}</h1>
+    <h1 *ngIf="loading">Loading...</h1>
+  </ul>
+</header>

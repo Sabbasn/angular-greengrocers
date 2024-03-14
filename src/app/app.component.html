@@ -1,9 +1,5 @@
-<header id="store">
-  <h1>Greengrocers</h1>
-  <app-store></app-store>
-</header>
-<main id="cart">
-  <h2>Your Cart</h2>
-  <app-cart></app-cart>
-  <app-total></app-total>
-</main>
+<nav style="display: flex; gap: 10px">
+  <a routerLink="/">Home</a>
+  <a routerLink="/checkout">Checkout</a>
+</nav>
+<router-outlet></router-outlet>
