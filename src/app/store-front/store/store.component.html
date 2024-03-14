@@ -1,0 +1,9 @@
+<ul class="item-list store--item-list">
+  <app-store-item
+    *ngFor="let grocery of groceries"
+    [item]="grocery"
+    (add)="addToCart($event)"
+  ></app-store-item>
+  <h1 *ngIf="error" style="color: red">{{ error }}</h1>
+  <h1 *ngIf="loading">Loading...</h1>
+</ul>

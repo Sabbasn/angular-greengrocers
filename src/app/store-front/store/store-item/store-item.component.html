@@ -1,0 +1,6 @@
+<li *ngIf="item">
+  <div class="store--item-icon">
+    <img [src]="icon" [alt]="item.name" />
+  </div>
+  <button (click)="onAddClick()">Add to cart</button>
+</li>
