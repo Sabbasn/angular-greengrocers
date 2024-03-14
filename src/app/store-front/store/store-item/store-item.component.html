@@ -2,5 +2,7 @@
   <div class="store--item-icon">
     <img [src]="icon" [alt]="item.name" />
   </div>
+  <p>{{ item.name }}</p>
+  <p>£{{ item.price }}</p>
   <button (click)="onAddClick()">Add to cart</button>
 </li>

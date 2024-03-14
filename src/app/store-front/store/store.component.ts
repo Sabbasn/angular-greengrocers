@@ -9,7 +9,6 @@ import { GroceryService } from '../grocery.service';
 })
 export class StoreComponent implements OnInit {
   private groceryService: GroceryService = inject(GroceryService);
-  private filters = ['fruit', 'vegetable'];
   groceries: Item[] = [];
   error?: string;
   loading: boolean = false;
