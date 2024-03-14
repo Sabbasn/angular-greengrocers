@@ -2,6 +2,10 @@
   <button (click)="changeFilter()">Filter by:</button>
   <p>{{ filter | uppercase }}</p>
 </div>
+<div>
+  <button (click)="toggleAscending()">Price</button>
+  <p></p>
+</div>
 <ul class="item-list store--item-list">
   <app-store-item
     *ngFor="let grocery of groceries"

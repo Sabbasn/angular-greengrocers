@@ -12,11 +12,17 @@ export class StoreComponent implements OnInit {
   groceries: Item[] = [];
   error?: string;
   loading: boolean = false;
+
   filter?: string;
+  ascending: boolean = true;
 
   getGroceries() {
     this.groceryService.getGroceries(this.filter).subscribe({
-      next: (res: Item[]) => (this.groceries = res),
+      next: (res: Item[]) =>
+        (this.groceries = res.sort((a, b) => {
+          if (this.ascending) return a.price - b.price;
+          else return b.price - a.price;
+        })),
       error: (err) => (this.error = err.message),
       complete: () => (this.loading = false),
     });
@@ -34,5 +40,9 @@ export class StoreComponent implements OnInit {
   changeFilter() {
     this.filter = this.filter === 'fruit' ? 'vegetable' : 'fruit';
     this.getGroceries();
+  }
+
+  toggleAscending() {
+    this.groceries = this.groceries.reverse();
   }
 }
